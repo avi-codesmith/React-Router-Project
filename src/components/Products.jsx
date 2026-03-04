@@ -12,7 +12,7 @@ export default function Products() {
       <h1 className="centre">This is my ultimate Products Page!</h1>
       <ul>
         {PRODUCTS.map((prod) => (
-          <li>
+          <li key={prod.id}>
             <Link to={`${prod.id}`}>{prod.title}</Link>
           </li>
         ))}
