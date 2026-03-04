@@ -22,11 +22,11 @@ import ProductDetails from "./components/ProductDetails";
 
 const router = createBrowserRouter([
   {
-    path: "",
+    path: "/",
     element: <Root />,
     errorElement: <Error />, // we can add error as fallback page
     children: [
-      { path: "/", element: <Homepage /> },
+      { index: true, element: <Homepage /> },
       { path: "products", element: <Products /> },
       { path: "products/:id", element: <ProductDetails /> }, // It will give PoductDetails page with products as the "useParams().id" to be setted (in the ProductDetails and Products.jsx)
     ],
