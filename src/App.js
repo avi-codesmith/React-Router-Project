@@ -7,6 +7,7 @@ import {
 
 import Homepage from "./components/Homepage";
 import Products from "./components/Products";
+import MainNav from "./components/MainNav";
 
 // const routerDefinition = createRoutesFromElements(
 //   <Route>
@@ -18,9 +19,15 @@ import Products from "./components/Products";
 // const routerJSX = createBrowserRouter(routerDefinition); // older
 
 const router = createBrowserRouter([
-  { path: "/", element: <Homepage /> },
-  { path: "/products", element: <Products /> },
-]);
+  {
+    path: "",
+    element: <MainNav />,
+    children: [
+      { path: "", element: <Homepage /> },
+      { path: "products", element: <Products /> },
+    ],
+  },
+]); // we can handle children and main like that and also we have to add a marker where to put our children (in MainNav)
 
 // small and easy to mantian (new)
 
@@ -29,6 +36,7 @@ function App() {
     <>
       <RouterProvider router={router} />
       {/* small and easy to mantian (new)*/}
+
       {/*<RouterProvider router={routerJSX} /> older*/}
     </>
   );

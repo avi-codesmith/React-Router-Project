@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
+import "./Centre.css";
 
 export default function Homepage() {
   return (
     <>
-      <h1>This is my ultimate homepage!</h1>
-      <Link to="/products">Go to Products List</Link>
+      <h1 className="centre">This is my ultimate homepage!</h1>
     </>
   );
 }
