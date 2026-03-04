@@ -9,6 +9,7 @@ import Homepage from "./components/Homepage";
 import Products from "./components/Products";
 import Root from "./components/Root";
 import Error from "./components/Error";
+import ProductDetails from "./components/ProductDetails";
 
 // const routerDefinition = createRoutesFromElements(
 //   <Route>
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
     children: [
       { path: "", element: <Homepage /> },
       { path: "products", element: <Products /> },
+      { path: "products/:id", element: <ProductDetails /> }, // It will give PoductDetails page with products as the "useParams().id" to be setted (in the ProductDetails and Products.jsx)
     ],
   },
 ]); // we can handle children and main like that and also we have to add a marker where to put our children (in Root.jsx)
