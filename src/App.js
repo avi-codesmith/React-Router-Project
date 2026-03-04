@@ -7,7 +7,8 @@ import {
 
 import Homepage from "./components/Homepage";
 import Products from "./components/Products";
-import MainNav from "./components/MainNav";
+import Root from "./components/Root";
+import Error from "./components/Error";
 
 // const routerDefinition = createRoutesFromElements(
 //   <Route>
@@ -21,13 +22,14 @@ import MainNav from "./components/MainNav";
 const router = createBrowserRouter([
   {
     path: "",
-    element: <MainNav />,
+    element: <Root />,
+    errorElement: <Error />, // we can add error as fallback page
     children: [
       { path: "", element: <Homepage /> },
       { path: "products", element: <Products /> },
     ],
   },
-]); // we can handle children and main like that and also we have to add a marker where to put our children (in MainNav)
+]); // we can handle children and main like that and also we have to add a marker where to put our children (in Root.jsx)
 
 // small and easy to mantian (new)
 

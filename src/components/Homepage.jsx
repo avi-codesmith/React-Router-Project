@@ -1,5 +1,3 @@
-import "./Centre.css";
-
 export default function Homepage() {
   return (
     <>
